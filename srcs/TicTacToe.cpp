@@ -48,6 +48,22 @@ TicTacToe::~TicTacToe(){}
 
 bool    TicTacToe::checkWinConditions(char marker) {
 	int	sum;
+	bool draw = true;
+	for (int i = 0; i < _height; ++i) {
+		for (int j = 0; j < _width; ++j) {
+			if (_board[i][j] == '.') {
+				draw = false;
+				break ;
+			}
+		}
+		if (!draw) {
+			break ;
+		}
+	}
+	if (draw) {
+		std::cout << "Draw!" << std::endl;
+		exit(0);
+	}
 	for (int i = 0; i < _height; ++i) {
 		sum = 0;
 		for (int j = 0; j < _width; ++j) {
