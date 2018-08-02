@@ -22,7 +22,7 @@ void ArtificialPlayer::doTurn(TicTacToe & t) {
 				if (t.getMarker(i, j) == '.') {
 					input_pos = j;
 				}
-				else if (t.getMarker(i, j) != _marker) {
+				else if (t.getMarker(i, j) == _marker) {
 					sum++;
 				}
 			}
@@ -38,7 +38,7 @@ void ArtificialPlayer::doTurn(TicTacToe & t) {
 				if (t.getMarker(j, i) == '.') {
 					input_pos = j;
 				}
-				else if (t.getMarker(j, i) != _marker) {
+				else if (t.getMarker(j, i) == _marker) {
 					sum++;
 				}
 			}
