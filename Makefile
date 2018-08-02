@@ -1,7 +1,7 @@
 NAME				=	tic_tac_toe
 
-CC					=	clang++
-CC_FLAGS			=	-Wall -Werror -Wextra -g
+CC					=	g++
+CC_FLAGS			=	-Wall -Werror -Wextra -g -std=c++11
 
 SRC_PATH			=	./srcs/
 
@@ -14,8 +14,10 @@ INC					=	$(addprefix -I, $(INC_PATH))
 
 OBJ_NAME			=	$(SRC_NAME:.cpp=.o)
 
-SRC_NAME			=	main.cpp		\
-						TicTacToe.cpp
+SRC_NAME			=	main.cpp				\
+						TicTacToe.cpp			\
+						HumanPlayer.cpp			\
+						ArtificialPlayer.cpp
 
 all: $(NAME)
 
