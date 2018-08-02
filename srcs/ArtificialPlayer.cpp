@@ -48,6 +48,38 @@ void ArtificialPlayer::doTurn(TicTacToe & t) {
 			}
 		}
 		for (int i = 0; i < height; ++i) {
+			int sum = 0;
+			int input_pos = -1;
+			for (int j = 0; j < width; ++j) {
+				if (t.getMarker(i, j) == '.') {
+					input_pos = j;
+				}
+				else if (t.getMarker(i, j) != _marker) {
+					sum++;
+				}
+			}
+			if (sum == 2 && input_pos >= 0) {
+				t.setMarker(i, input_pos, _marker);
+				return ;
+			}
+		}
+		for (int i = 0; i < width; ++i) {
+			int sum = 0;
+			int input_pos = -1;
+			for (int j = 0; j < height; ++j) {
+				if (t.getMarker(j, i) == '.') {
+					input_pos = j;
+				}
+				else if (t.getMarker(j, i) != _marker) {
+					sum++;
+				}
+			}
+			if (sum == 2 && input_pos >= 0) {
+				t.setMarker(input_pos, i, _marker);
+				return ;
+			}
+		}
+		for (int i = 0; i < height; ++i) {
 			for (int j = 0; j < width; ++j) {
 				if (t.getMarker(i, j) == '.') {
 					t.setMarker(i, j, _marker);
